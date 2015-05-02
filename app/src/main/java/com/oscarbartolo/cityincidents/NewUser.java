@@ -6,13 +6,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class Login extends Activity {
+public class NewUser extends Activity {
     //TODO pantalla completa
+    //TODO ¿? repeat pass
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_new_user);
     }
 
 
@@ -36,6 +37,6 @@ public class Login extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-        //TODO cambiar espacion por una imagen
+        //TODO cambiar espacio por una imagen
     }
 }
