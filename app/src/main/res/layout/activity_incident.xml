@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingLeft="@dimen/activity_horizontal_margin"
+android:paddingRight="@dimen/activity_horizontal_margin"
+android:paddingTop="@dimen/activity_vertical_margin"
+android:paddingBottom="@dimen/activity_vertical_margin"
+android:orientation="vertical"
+android:layout_alignParentTop="true"
+android:layout_centerHorizontal="true"
+tools:context="com.oscarbartolo.cityincidents.Incident">
+
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:id="@+id/imgIncident"
+    android:layout_gravity="center_horizontal"
+    android:contentDescription="@string/img_incident"
+    android:soundEffectsEnabled="false"
+    android:src="@drawable/img_incident" />
+
+<Space
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:layout_gravity="center_horizontal" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/address"
+    android:id="@+id/tvAddress" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/address"
+    android:id="@+id/etAddress"
+    android:textSize="20dp" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/description"
+    android:id="@+id/tvDescription" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/description"
+    android:id="@+id/etDescription"
+    android:textSize="20dp" />
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/view_map"
+    android:id="@+id/btViewMap"
+    android:layout_gravity="center_horizontal" />
+</LinearLayout>

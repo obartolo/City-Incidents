@@ -1,18 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-    TODO: Before you run your application, you need a Google Maps API key.
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC4zOo3aw7Tg-h-2265_TmhjZ_LXgI1Lpg</string>
+    <string name="google_maps_key_instructions">
+        <!-- To get one, follow this link, follow the directions and press "Create" at the end:
 
-    To get one, follow this link, follow the directions and press "Create" at the end:
+        https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=8B:C7:8A:69:3B:F4:6A:CD:63:54:F4:36:8F:45:43:15:DE:B4:9F:C4%3Bcom.oscarbartolo.cityincidents
 
-https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=2A:2C:18:74:60:31:18:77:F9:44:42:3B:12:35:EE:A4:BF:81:21:AA%3Bcom.oscarbartolo.cityincidents
+        You can also add your credentials to an existing key, using this line:
+        8B:C7:8A:69:3B:F4:6A:CD:63:54:F4:36:8F:45:43:15:DE:B4:9F:C4;com.oscarbartolo.cityincidents
 
-    You can also add your credentials to an existing key, using this line:
-    2A:2C:18:74:60:31:18:77:F9:44:42:3B:12:35:EE:A4:BF:81:21:AA;com.oscarbartolo.cityincidents
-
-    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
-    string in this file.
-    -->
-    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
-        YOUR_KEY_HERE
+        Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+        string in this file.
+        -->
     </string>
+
 </resources>

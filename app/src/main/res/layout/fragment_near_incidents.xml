@@ -11,22 +11,10 @@
     android:layout_centerHorizontal="true"
     tools:context="com.oscarbartolo.cityincidents.MainActivity$PlaceholderFragment">
 
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="150sp"
-        android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:layout_width="200dp"
+    <ListView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/explore"
-        android:id="@+id/btExplore"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="@string/new_incident"
-        android:id="@+id/btNewIncident"
+        android:id="@+id/lvNearIncidents"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>

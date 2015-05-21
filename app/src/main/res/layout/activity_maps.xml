@@ -1,18 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/map"
-    tools:context="com.oscarbartolo.cityincidents.MapsActivity"
-    android:name="com.google.android.gms.maps.SupportMapFragment" />
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    tools:context="com.oscarbartolo.cityincidents.MapsActivity">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        android:id="@+id/mapIncident"
+        tools:context="com.oscarbartolo.cityincidents.MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Space
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/accept"
+            android:id="@+id/btIncident"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </LinearLayout>
+

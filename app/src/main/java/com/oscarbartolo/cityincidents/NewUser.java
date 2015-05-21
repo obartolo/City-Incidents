@@ -7,8 +7,6 @@ import android.view.MenuItem;
 
 
 public class NewUser extends Activity {
-    //TODO pantalla completa
-    //TODO ¿? repeat pass
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,24 +17,20 @@ public class NewUser extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
+        //TODO cambiar menu
         return super.onOptionsItemSelected(item);
-        //TODO cambiar espacio por una imagen
     }
+
+    //TODO conectar con el servidor
 }
