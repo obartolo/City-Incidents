@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    tools:context="com.oscarbartolo.cityincidents.MainActivity$PlaceholderFragment">
+    tools:context="com.oscarbartolo.cityincidents.ui.MainActivity$PlaceholderFragment">
 
     <Space
         android:layout_width="fill_parent"

@@ -9,7 +9,7 @@ android:paddingBottom="@dimen/activity_vertical_margin"
 android:orientation="vertical"
 android:layout_alignParentTop="true"
 android:layout_centerHorizontal="true"
-tools:context="com.oscarbartolo.cityincidents.Incident">
+tools:context="com.oscarbartolo.cityincidents.ui.IncidentActivity">
 
 
 <ImageView
@@ -29,15 +29,15 @@ tools:context="com.oscarbartolo.cityincidents.Incident">
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/address"
-    android:id="@+id/tvAddress" />
+    android:text="@string/title_incident"
+    android:id="@+id/tvTitle" />
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/address"
-    android:id="@+id/etAddress"
-    android:textSize="20dp" />
+    android:text="@string/title_incident"
+    android:id="@+id/etTitle"
+    android:textSize="20sp" />
 
 <TextView
     android:layout_width="wrap_content"
@@ -50,8 +50,31 @@ tools:context="com.oscarbartolo.cityincidents.Incident">
     android:layout_height="wrap_content"
     android:text="@string/description"
     android:id="@+id/etDescription"
-    android:textSize="20dp" />
+    android:textSize="20sp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/description"
+    android:id="@+id/tvDate" />
 
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/date"
+    android:id="@+id/etDate"
+    android:textSize="20sp" />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/create_by"
+    android:id="@+id/tvUser" />
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/create_by"
+    android:id="@+id/etUser"
+    android:textSize="20sp" />
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

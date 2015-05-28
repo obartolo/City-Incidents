@@ -1,23 +1,27 @@
 package com.oscarbartolo.cityincidents.Base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * Created by Oscar on 03/05/2015.
  */
 public class Incident {
+
     private int id;
     private String description;
     private byte[] image;
     private Timestamp createdate;
-    private Timestamp lastmodificationdate;
     private String latitude;
     private String longitude;
-    private String address;
-    private List<Person> person;
-    private Broken broken;
-    private Fixed fixed;
+    private String title;
+    private Person id_person;
+
+    public Incident(){
+
+    }
 
     public int getId() {
         return id;
@@ -51,14 +55,6 @@ public class Incident {
         this.createdate = createdate;
     }
 
-    public Timestamp getLastmodificationdate() {
-        return lastmodificationdate;
-    }
-
-    public void setLastmodificationdate(Timestamp lastmodificationdate) {
-        this.lastmodificationdate = lastmodificationdate;
-    }
-
     public String getLatitude() {
         return latitude;
     }
@@ -75,35 +71,20 @@ public class Incident {
         this.longitude = longitude;
     }
 
-    public String getAddress() {
-        return address;
+    public String getTitle() {
+        return title;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public List<Person> getPerson() {
-        return person;
+    public Person getId_person() {
+        return id_person;
     }
 
-    public void setPerson(List<Person> person) {
-        this.person = person;
+    public void setId_person(Person id_person) {
+        this.id_person = id_person;
     }
 
-    public Broken getBroken() {
-        return broken;
-    }
-
-    public void setBroken(Broken broken) {
-        this.broken = broken;
-    }
-
-    public Fixed getFixed() {
-        return fixed;
-    }
-
-    public void setFixed(Fixed fixed) {
-        this.fixed = fixed;
-    }
 }

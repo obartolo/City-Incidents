@@ -22,7 +22,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Login"
+            android:name=".ui.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,21 +31,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NewUser"
+            android:name=".ui.NewUserActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".ui.MapsActivity"
             android:label="@string/app_name" />
         <activity
-            android:name=".NewIncident"
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".ui.NewIncidentActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".Incident"
+            android:name=".ui.IncidentActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.AboutMeActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

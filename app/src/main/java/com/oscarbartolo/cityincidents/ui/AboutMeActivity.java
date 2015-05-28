@@ -1,19 +1,20 @@
-package com.oscarbartolo.cityincidents;
+package com.oscarbartolo.cityincidents.ui;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.oscarbartolo.cityincidents.R;
 
-public class Incident extends ActionBarActivity {
+
+public class AboutMeActivity extends Activity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_incident);
+        setContentView(R.layout.activity_about_me);
+        //TODO
     }
-
-    //TODO mostra los datos del incident
-    //TODO controlar boton e ir al mapa pasandole todo el incident
 }

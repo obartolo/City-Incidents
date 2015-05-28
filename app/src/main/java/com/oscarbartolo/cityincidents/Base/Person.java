@@ -1,5 +1,8 @@
 package com.oscarbartolo.cityincidents.Base;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Oscar on 03/05/2015.
  */
@@ -13,9 +16,10 @@ public class Person {
     private String city;
     private String address;
     private byte[] image;
-    private Incident incident;
-    private Broken broken;
-    private Fixed fixed;
+
+    public Person(){
+
+    }
 
     public int getId() {
         return id;
@@ -87,29 +91,5 @@ public class Person {
 
     public void setImage(byte[] image) {
         this.image = image;
-    }
-
-    public Incident getIncident() {
-        return incident;
-    }
-
-    public void setIncident(Incident incident) {
-        this.incident = incident;
-    }
-
-    public Broken getBroken() {
-        return broken;
-    }
-
-    public void setBroken(Broken broken) {
-        this.broken = broken;
-    }
-
-    public Fixed getFixed() {
-        return fixed;
-    }
-
-    public void setFixed(Fixed fixed) {
-        this.fixed = fixed;
     }
 }

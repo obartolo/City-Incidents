@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    tools:context="com.oscarbartolo.cityincidents.NewIncident">
+    tools:context="com.oscarbartolo.cityincidents.ui.NewIncidentActivity">
 
 
     <RelativeLayout
@@ -29,7 +29,7 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/imgAddImage"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -46,13 +46,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/address"
-        android:id="@+id/tvAddress" />
+        android:text="@string/title_incident"
+        android:id="@+id/tvTitle" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etAddress"
+        android:id="@+id/etTitle"
         android:inputType="text" />
 
     <TextView

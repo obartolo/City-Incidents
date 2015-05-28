@@ -11,6 +11,6 @@
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
     android:id="@+id/tab"
-    tools:context="com.oscarbartolo.cityincidents.MainActivity">
+    tools:context="com.oscarbartolo.cityincidents.ui.MainActivity">
 
 </LinearLayout>

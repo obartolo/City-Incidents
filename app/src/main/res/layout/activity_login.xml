@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:layout_alignParentTop="true"
     android:layout_centerHorizontal="true"
-    tools:context="com.oscarbartolo.cityincidents.Login">
+    tools:context="com.oscarbartolo.cityincidents.ui.LoginActivity">
 
 
     <Space

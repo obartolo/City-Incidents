@@ -1,4 +1,4 @@
-package com.oscarbartolo.cityincidents;
+package com.oscarbartolo.cityincidents.ui;
 
 
 import android.app.ActionBar;
@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.app.ActionBar.Tab;
 import android.app.Fragment;
 import android.content.res.Resources;
-import android.widget.Button;
 
+import com.oscarbartolo.cityincidents.R;
+import com.oscarbartolo.cityincidents.ui.fragments.MainFragment;
+import com.oscarbartolo.cityincidents.ui.fragments.MyIncidentsFragment;
+import com.oscarbartolo.cityincidents.ui.fragments.NearIncidentsFragment;
 import com.oscarbartolo.cityincidents.util.TabsListener;
 
 public class MainActivity extends Activity {
