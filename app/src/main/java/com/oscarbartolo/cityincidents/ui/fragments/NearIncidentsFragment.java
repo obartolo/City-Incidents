@@ -64,7 +64,6 @@ public class NearIncidentsFragment extends Fragment implements AdapterView.OnIte
         View view = inflater.inflate(R.layout.fragment_near_incidents, container, false);
 
         getLocation();
-        //TODO conseguir ubicacion
         lvNearIncidents = (ListView) view.findViewById(R.id.lvNearIncidents);
         return view;
     }

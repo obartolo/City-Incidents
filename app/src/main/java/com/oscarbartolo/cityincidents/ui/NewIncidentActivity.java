@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,13 +19,20 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.dropbox.client2.DropboxAPI;
+import com.dropbox.client2.android.AndroidAuthSession;
+import com.dropbox.client2.exception.DropboxException;
+import com.dropbox.client2.session.AppKeyPair;
 import com.google.android.gms.maps.model.LatLng;
 import com.oscarbartolo.cityincidents.R;
 
-import org.springframework.http.converter.FormHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Date;
 
 public class NewIncidentActivity extends Activity implements View.OnClickListener {
     private final int RESULT_IMAGE = 1;
@@ -40,6 +45,9 @@ public class NewIncidentActivity extends Activity implements View.OnClickListene
     private String picturePath;
     private SharedPreferences sharedPref;
 
+    final static private String APP_KEY = "om0ahyk6ucrr4oy";
+    final static private String APP_SECRET = "oqkgl77po8j5o9i";
+    private DropboxAPI<AndroidAuthSession> mDBApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +74,16 @@ public class NewIncidentActivity extends Activity implements View.OnClickListene
                 takeImage();
             }
         });
+
+
+        AppKeyPair appKeys = new AppKeyPair(APP_KEY, APP_SECRET);
+        AndroidAuthSession session = new AndroidAuthSession(appKeys);
+        mDBApi = new DropboxAPI<>(session);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btCreate) {
-            btCreate.setEnabled(false);
             saveData();
         }
     }
@@ -134,54 +146,49 @@ public class NewIncidentActivity extends Activity implements View.OnClickListene
         String longitude = String.valueOf(position.longitude);
         String id = String.valueOf(sharedPref.getInt("id", -1));
 
-        ByteArrayOutputStream os = new ByteArrayOutputStream();
-
-
-
-        Bitmap bmp = BitmapFactory.decodeFile(picturePath);
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        img = stream.toByteArray();
-        String image = Base64.encodeToString(img, Base64.DEFAULT);
-
-        /*if (){
-            //TODO comprobar que ha cambiado la imagen
+        if (picturePath.equals("")){
             Toast.makeText(getApplicationContext(), R.string.error_image, Toast.LENGTH_LONG).show();
             return;
-        }*/
+        }
+        if (title.equals("")){
+            Toast.makeText(getApplicationContext(), R.string.error_title, Toast.LENGTH_LONG).show();
+            return;
+        }
 
-        /*//Toast.makeText(getApplicationContext(), R.string.processing_image, Toast.LENGTH_LONG).show();
 
-        String image = "";
-        /*File file = new File(picturePath);
-        try {
-            FileInputStream stream = new FileInputStream(file);
-            img = new byte[(int) file.length()];
-            stream.read(img);
+        btCreate.setEnabled(false);
 
-            image = Base64.encodeBytes(img);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-        //Toast.makeText(getApplicationContext(), R.string.image_process, Toast.LENGTH_LONG).show();
-        //Toast.makeText(getApplicationContext(), image, Toast.LENGTH_LONG).show();*/
-
-        new Connect().execute(title, description, image, latitude, longitude, id);
+        new Connect().execute(title, description, picturePath, latitude, longitude, id);
     }
+
 
     public class Connect extends AsyncTask<String, Void, Boolean> {
         @Override
         protected Boolean doInBackground(String... datum) {
+            File file = new File(datum[2]);
+            String path = "/CityIncidents Images/" + String.valueOf(new Date().getTime()) + "_" + datum[5] + ".jpg";
+
             try {
-                final String url = "http://192.168.1.12:8080/addincident?title=" + datum[0] + "&description=" + datum[1] + "&img=" + datum[2] +
-                                    "&lat=" + datum[3] + "&lon=" + datum[4] + "&id=" + datum[5] ;
+                mDBApi.getSession().setOAuth2AccessToken("j0_EesclvGAAAAAAAAAACA04Rzitdg-v6flmX76GcipAjZlKkLhDDICF7dpj02ha");
+
+                FileInputStream stream = new FileInputStream(file);
+                mDBApi.putFile(path, stream, file.length(), null, null);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+                return false;
+            } catch (DropboxException e) {
+                e.printStackTrace();
+                return false;
+            }
+
+            try {
+                final String url = "http://192.168.1.12:8080/addincident?title=" + datum[0] + "&description=" + datum[1] + "&img=" + path +
+                        "&lat=" + datum[3] + "&lon=" + datum[4] + "&id=" + datum[5] ;
 
                 RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getMessageConverters().add(new FormHttpMessageConverter());
-                boolean newIncident = restTemplate.getForObject(url, Boolean.class);
+                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+                boolean newIncident = Boolean.parseBoolean(restTemplate.getForObject(url, String.class));
                 return newIncident;
             } catch (Exception e) {
                 Log.e("", e.getMessage(), e);

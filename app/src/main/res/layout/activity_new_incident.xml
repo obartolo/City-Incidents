@@ -11,68 +11,80 @@
     android:layout_centerHorizontal="true"
     tools:context="com.oscarbartolo.cityincidents.ui.NewIncidentActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/imgIncident"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="@string/img_incident"
-            android:soundEffectsEnabled="false"
-            android:src="@drawable/img_incident" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgIncident"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/img_incident"
+                    android:soundEffectsEnabled="false"
+                    android:src="@drawable/img_incident" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imgAddImage"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:contentDescription="@string/img_edit"
-            android:src="@drawable/img_edit"
-            android:background="#00ffffff" />
-    </RelativeLayout>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgAddImage"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/img_edit"
+                    android:src="@drawable/img_edit"
+                    android:background="#00ffffff" />
+            </RelativeLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_gravity="center_horizontal" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_incident"
-        android:id="@+id/tvTitle" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_incident"
+                android:id="@+id/tvTitle" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etTitle"
-        android:inputType="text" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etTitle"
+                android:inputType="text" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/description"
-        android:id="@+id/tvDescription" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:id="@+id/tvDescription" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etDescription" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/etDescription" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create"
-        android:id="@+id/btCreate"
-        android:layout_gravity="center_horizontal" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create"
+                android:id="@+id/btCreate"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
 

@@ -70,9 +70,7 @@ public class Adapter extends ArrayAdapter<Incident> {
         }
 
         Incident incident = incidentList.get(position);
-        itemIncident.imgIncident.setImageBitmap(BitmapFactory.decodeByteArray(incident.getImage(), 0, incident.getImage().length));
         itemIncident.tvTitleIncident.setText(incident.getTitle());
-
         return view;
     }
 }

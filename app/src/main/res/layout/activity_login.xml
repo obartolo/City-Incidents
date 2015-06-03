@@ -14,7 +14,7 @@
 
     <Space
         android:layout_width="fill_parent"
-        android:layout_height="150dp" />
+        android:layout_height="150sp" />
 
     <TextView
         android:layout_width="fill_parent"

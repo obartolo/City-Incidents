@@ -11,74 +11,83 @@ android:layout_alignParentTop="true"
 android:layout_centerHorizontal="true"
 tools:context="com.oscarbartolo.cityincidents.ui.IncidentActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/imgIncident"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/img_incident"
+                android:soundEffectsEnabled="false"
+                android:src="@drawable/img_incident" />
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:id="@+id/imgIncident"
-    android:layout_gravity="center_horizontal"
-    android:contentDescription="@string/img_incident"
-    android:soundEffectsEnabled="false"
-    android:src="@drawable/img_incident" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal" />
 
-<Space
-    android:layout_width="match_parent"
-    android:layout_height="20dp"
-    android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_incident"
+                android:id="@+id/tvTitle" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/title_incident"
-    android:id="@+id/tvTitle" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_incident"
+                android:id="@+id/etTitle"
+                android:textSize="20sp" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/title_incident"
-    android:id="@+id/etTitle"
-    android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:id="@+id/tvDescription" />
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/description"
-    android:id="@+id/tvDescription" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:id="@+id/etDescription"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:id="@+id/tvDate" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/description"
-    android:id="@+id/etDescription"
-    android:textSize="20sp" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/description"
-    android:id="@+id/tvDate" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:id="@+id/etDate"
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_by"
+                android:id="@+id/tvUser" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/date"
-    android:id="@+id/etDate"
-    android:textSize="20sp" />
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/create_by"
-    android:id="@+id/tvUser" />
-
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/create_by"
-    android:id="@+id/etUser"
-    android:textSize="20sp" />
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/view_map"
-    android:id="@+id/btViewMap"
-    android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/create_by"
+                android:id="@+id/etUser"
+                android:textSize="20sp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_map"
+                android:id="@+id/btViewMap"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

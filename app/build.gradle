@@ -38,10 +38,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/dropbox-sync-sdk-android.jar')
     //compile 'com.android.support:recyclerview-v7:21.0.1'
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.android.support:support-v4:22.1.1'
     compile 'com.google.android.gms:play-services:7.3.0'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.2'
+    compile files('build/libs/json_simple-1.1.jar')
+    compile files('build/libs/dropbox-android-sdk-1.6.3.jar')
 }

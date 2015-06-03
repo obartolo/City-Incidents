@@ -31,6 +31,7 @@
     <string name="error_new_user">User can´t be created</string>
     <string name="error_new_incident">Incident can´t be created</string>
     <string name="error_image">Image is needed</string>
+    <string name="error_title">Title is needed</string>
 
     <string name="date">Date</string>
     <string name="create_by">Create by</string>
@@ -43,4 +44,9 @@
 
     <string name="about_me">About me</string>
     <string name="log_out">Log Out</string>
+
+    <string name="oscar">Oscar Batolo Perez</string>
+    <string name="oscar_email">obartolo92@gmail.com</string>
+    <string name="developer">Android Developer</string>
+
 </resources>
